@@ -11,7 +11,7 @@
     "authPage": {
       "showLogo": true,
       "messages": {
-        "signInTitle": "Welcome to your Beacon Hill portal",
+        "signInTitle": "Welcome to your resident portal",
         "signInSubtitle": "Sign in with the email your property manager has on file",
         "signUpTitle": "Create your portal account",
         "signUpSubtitle": "Use the email your property manager has on file"

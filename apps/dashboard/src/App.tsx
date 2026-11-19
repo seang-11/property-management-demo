@@ -78,7 +78,7 @@ function Page({ page: { Component }, need }: { page: { Component: ComponentType 
 
 /** The company logo from Settings, remembered from the last visit so it shows before the workspace loads. */
 function BrandLogo() {
-  return <img src="/logo.png" alt="Beacon Hill Property Management" className="mb-8 w-72 max-w-full shadow-md" />;
+  return <img src="/logo.png" alt="Property Management Co." className="mb-8 w-72 max-w-full shadow-md" />;
 }
 
 function BootScreen({ state, onRetry, message }: { state: 'loading' | 'error'; onRetry: () => void; message?: string }) {

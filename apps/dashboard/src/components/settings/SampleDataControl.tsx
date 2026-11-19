@@ -89,7 +89,7 @@ export function SampleDataControl({ removeLink = false }: { removeLink?: boolean
         ? { title: 'Continue loading the sample data?', description: 'Adds the rest of the sample company. It takes a few minutes, so keep this tab open. You can remove all of it later in Settings → Demo data.', confirmLabel: 'Continue loading' }
         : {
             title: 'Load sample data?',
-            description: 'Adds sample Beacon Hill data: 6 properties, 35 units, residents, vendors, work orders and eight months of books, with your email linked to a sample lease, owner and vendor so you can preview the portal. It takes a few minutes. You can remove it later in Settings → Demo data.',
+            description: 'Adds sample data: 6 properties, 35 units, residents, vendors, work orders and eight months of books, with your email linked to a sample lease, owner and vendor so you can preview the portal. It takes a few minutes. You can remove it later in Settings → Demo data.',
             confirmLabel: 'Load sample data',
           },
     );

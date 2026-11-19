@@ -22,7 +22,7 @@ export default function OrganizationSection() {
               </Row>
               <Row label="Company name" htmlFor="org-name" error={errors.organizationName} description="How residents, owners and vendors see you.">
                 <div data-field="organizationName">
-                  <TextInput id="org-name" value={draft.organizationName} invalid={Boolean(errors.organizationName)} onChange={e => set('organizationName', e.target.value)} placeholder="Beacon Hill Property Management" />
+                  <TextInput id="org-name" value={draft.organizationName} invalid={Boolean(errors.organizationName)} onChange={e => set('organizationName', e.target.value)} placeholder="Property Management Co." />
                 </div>
               </Row>
               <Row label="Legal name" htmlFor="org-legal" error={errors.legalName} description="Used where checks should be made payable. Leave empty to use the company name.">

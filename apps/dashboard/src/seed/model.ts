@@ -42,14 +42,14 @@ export const SEED_BANKS: Record<string, { name: string; bankName: string; last4:
 export const SEED_ADMIN_PROFILE = { title: 'Director of Property Management', phone: '(303) 555-0140' };
 
 export const ORG = {
-  organizationName: 'Beacon Hill Property Management',
-  legalName: 'Beacon Hill Property Management',
+  organizationName: 'Property Management Co.',
+  legalName: 'Property Management Co.',
   address: '72 Charles St\nBoston, MA 02114',
   phone: '(617) 555-0142',
   emergencyPhone: '(617) 555-0199',
   officeHours: 'Mon–Fri, 9am–5pm',
-  supportEmail: 'office@beaconhillpm.example.com',
-  websiteUrl: 'https://beaconhillpm.example.com',
+  supportEmail: 'office@propertymanagement.example.com',
+  websiteUrl: 'https://propertymanagement.example.com',
   brandColor: '#2C3E2D',
   currency: 'USD',
   timezone: 'America/New_York',
@@ -68,8 +68,8 @@ export const ORG = {
   incomeMultiple: 3,
   portalHeadline: 'Welcome home',
   portalIntro: 'Pay rent, request maintenance, sign your lease and reach our team — all in one place. Looking for a place? Browse homes available now.',
-  paymentInstructions: 'Pay online in the portal with a bank account or card. You can also drop a check (payable to Beacon Hill Property Management, unit number in the memo) at our office, 72 Charles St.',
-  emailSignature: 'Beacon Hill Property Management\n(617) 555-0142 · office@beaconhillpm.example.com',
+  paymentInstructions: 'Pay online in the portal with a bank account or card. You can also drop a check (payable to Property Management Co., unit number in the memo) at our office, 72 Charles St.',
+  emailSignature: 'Property Management Co.\n(617) 555-0142 · office@propertymanagement.example.com',
 };
 
 export const MEMBERS = [

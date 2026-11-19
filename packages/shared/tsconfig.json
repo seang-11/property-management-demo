@@ -1,15 +1,15 @@
 {
-  "extends": "../../apps/keystone/tsconfig.app.json",
+  "extends": "../../apps/property-portal/tsconfig.app.json",
   "compilerOptions": {
     "noEmit": true,
     "incremental": false,
     "paths": {
       "zitejs/db": ["../../.zite/db.ts"],
-      "zitejs/backend": ["../../apps/keystone/.zite/backend.ts"],
+      "zitejs/backend": ["../../apps/property-portal/.zite/backend.ts"],
       "zitejs/backend/base": ["../../node_modules/zitejs/dist/esm/backend/index.d.ts"],
       "zitejs/auth": ["../../node_modules/zitejs/dist/esm/auth/index.d.ts"],
-      "zitejs/email": ["../../apps/keystone/.zite/integrations/email.ts"],
-      "zitejs/api": ["../../apps/keystone/.zite/api.ts"],
+      "zitejs/email": ["../../apps/property-portal/.zite/integrations/email.ts"],
+      "zitejs/api": ["../../apps/property-portal/.zite/api.ts"],
       "@project/components/*": ["../components/*"]
     }
   },

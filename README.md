@@ -102,6 +102,6 @@ zite.config.json     Workspace-level integrations
 
 ## About
 
-This template was created by **Prospect Automations** so property management companies can launch modern, fully featured software on Zite in days instead of months.
+This template was created by **Sean Grady** from **Prospect Automations** so property management companies can launch modern, fully featured software on Zite in days instead of months.
 
 For setup help, customization, or a fully managed rollout, contact **Prospect Automations**. Email: sean@prospectautomations.com

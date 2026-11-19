@@ -78,25 +78,33 @@ function Page({ page: { Component }, need }: { page: { Component: ComponentType 
 
 /** The company logo from Settings, remembered from the last visit so it shows before the workspace loads. */
 function BrandLogo() {
-  return <img src="/logo.svg" alt="Property Management Co." className="mb-8 w-72 max-w-full shadow-md" />;
+  return (
+    <div className="mb-10 flex flex-col items-center gap-5">
+      <img src="/mark.svg" alt="" className="h-24 w-24 rounded-[22px] shadow-[0_12px_40px_-8px_rgba(0,0,0,0.5)] ring-1 ring-white/15" />
+      <div>
+        <div className="font-serif text-[28px] font-bold leading-tight tracking-tight text-[#F4EFE4] sm:text-[32px]">Property Management</div>
+        <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.3em] text-[#C9A86A]">Homes · Residents · Owners</div>
+      </div>
+    </div>
+  );
 }
 
 function BootScreen({ state, onRetry, message }: { state: 'loading' | 'error'; onRetry: () => void; message?: string }) {
   return (
-    <div className="grid h-[100dvh] place-items-center bg-canvas px-6">
-      <div className="flex max-w-sm flex-col items-center text-center animate-fade-up">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-[#2C3E2D] bg-[radial-gradient(ellipse_at_top,rgba(201,168,106,0.18),transparent_60%)] px-6 py-10">
+      <div className="flex w-full max-w-md flex-col items-center text-center animate-fade-up">
         <BrandLogo />
         {state === 'error' ? (
           <>
-            <h1 className="text-[16px] font-semibold">This app couldn’t load</h1>
-            <p className="mt-1.5 text-[14px] text-muted-foreground">{message ?? 'The workspace didn’t respond. If you opened this in a new browser, make sure you’re signed in to your organization.'}</p>
-            <button type="button" onClick={onRetry} className="mt-4 h-9 rounded-md border bg-background px-3 text-[14px] shadow-xs hover:bg-accent">Try again</button>
+            <h1 className="text-[17px] font-semibold text-[#F4EFE4]">This app couldn’t load</h1>
+            <p className="mt-2 text-[14px] leading-relaxed text-[#F4EFE4]/75">{message ?? 'The workspace didn’t respond. If you opened this in a new browser, make sure you’re signed in to your organization.'}</p>
+            <button type="button" onClick={onRetry} className="mt-5 h-10 rounded-md bg-[#C9A86A] px-4 text-[14px] font-medium text-[#2C3E2D] hover:bg-[#d6b87c]">Try again</button>
           </>
         ) : (
           <>
-            <h1 className="text-[15px] font-medium">Loading your workspace</h1>
-            <div className="mt-4 h-1 w-48 overflow-hidden rounded-full bg-muted">
-              <div className="h-full w-1/3 rounded-full bg-primary/70" style={{ animation: 'boot-slide 1.2s ease-in-out infinite' }} />
+            <h1 className="text-[15px] font-medium text-[#F4EFE4]/85">Loading your workspace…</h1>
+            <div className="mt-5 h-1.5 w-56 overflow-hidden rounded-full bg-white/15">
+              <div className="h-full w-1/3 rounded-full bg-[#C9A86A]" style={{ animation: 'boot-slide 1.2s ease-in-out infinite' }} />
             </div>
             <style>{'@keyframes boot-slide{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}'}</style>
           </>

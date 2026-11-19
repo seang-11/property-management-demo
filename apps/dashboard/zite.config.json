@@ -1,4 +1,9 @@
 {
   "id": "thhsngxbzs",
-  "accessMode": "internal"
+  "accessMode": "internal",
+  "integrationSettings": {
+    "email-1": {}
+  },
+  "brandKitId": "bk_oHRpUudQ2a",
+  "brandKitThemeHash": "1oaixf5"
 }

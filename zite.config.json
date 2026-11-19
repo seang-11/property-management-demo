@@ -2,5 +2,14 @@
   "project": {
     "name": "Property Management (Demo)",
     "basePublicIdentifier": "a18afa2b966eda03"
+  },
+  "integrations": {
+    "email-1": {
+      "type": "email",
+      "provider": "zite_email"
+    },
+    "anthropic-1": {
+      "type": "anthropic"
+    }
   }
 }

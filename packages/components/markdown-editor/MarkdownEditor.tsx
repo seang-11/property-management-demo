@@ -120,8 +120,6 @@ export function MarkdownEditor({
 }: MarkdownEditorProps) {
   const valueRef = useRef(content);
   const editor = useEditor({
-    // The first page can render on the server, where tiptap won't build an editor.
-    immediatelyRender: false,
     extensions: [StarterKit, Highlight, Typography, Image, Markdown],
     content,
     editable,

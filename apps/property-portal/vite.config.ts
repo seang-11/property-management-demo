@@ -68,7 +68,7 @@ export default defineConfig(({ command }) => ({
     skipWebSocketTokenCheck: true,
   },
   optimizeDeps: {
-    exclude: ["zitejs/db", "zitejs/api", "zitejs/auth", "zitejs/backend", "zitejs/integrations", "zitejs/email"],
+    exclude: ["zitejs/db", "zitejs/api", "zitejs/auth", "zitejs/backend", "zitejs/integrations", "zitejs/email", "zitejs/meta"],
     include: [...deps],
     // Crawl every source file at startup so Vite discovers all imported deps
     // upfront and includes them in the initial pre-bundle pass. By default Vite
@@ -85,7 +85,7 @@ export default defineConfig(({ command }) => ({
         h('script', {
           src:
             process.env.VITE_APP_RUNTIME_URL ||
-            'https://server.zite.com/runtime/app-runtime.js',
+            'https://zite.com/app-runtime.js',
         }),
       ],
     }),
@@ -103,6 +103,7 @@ export default defineConfig(({ command }) => ({
       "zitejs/caller": path.resolve(__dirname, "../../node_modules/zitejs/dist/esm/caller/index.js"),
       "zitejs/integrations": path.resolve(__dirname, "./.zite/integrations/airtable.ts"),
       "zitejs/email": path.resolve(__dirname, "./.zite/integrations/email.ts"),
+      "zitejs/meta": path.resolve(__dirname, "./.zite/meta.ts"),
                                         },
   },
 }));

@@ -5,6 +5,8 @@ declare namespace NodeJS {
   interface ProcessEnv {
     /** Public URL of the current app. */
     ZITE_APP_URL: string;
+    /** anthropic access token (anthropic-1) */
+    ZITE_ANTHROPIC_ACCESS_TOKEN: string;
     [key: string]: string | undefined;
   }
 }

@@ -1,4 +1,26 @@
 {
   "id": "jau4hnutpf",
-  "accessMode": "external"
+  "accessMode": "external",
+  "authentication": {
+    "signup": "open",
+    "authenticationMethods": {
+      "emailSignIn": true,
+      "googleSignIn": true,
+      "sso": false
+    },
+    "authPage": {
+      "showLogo": true,
+      "messages": {
+        "signInTitle": "Welcome to your Beacon Hill portal",
+        "signInSubtitle": "Sign in with the email your property manager has on file",
+        "signUpTitle": "Create your portal account",
+        "signUpSubtitle": "Use the email your property manager has on file"
+      }
+    }
+  },
+  "integrationSettings": {
+    "email-1": {}
+  },
+  "brandKitId": "bk_oHRpUudQ2a",
+  "brandKitThemeHash": "1oaixf5"
 }

@@ -7,6 +7,7 @@ const tailwindConfig: Config = {
     'src/**/*.{ts,tsx,css}',
     '../../packages/ui/**/*.{ts,tsx}',
     '../../packages/components/**/*.{ts,tsx}',
+    '../../packages/shared/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
@@ -15,12 +16,34 @@ const tailwindConfig: Config = {
         serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
         mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
       },
+      fontSize: {
+        // The portal reads at a 15px base: applicants range from a first-time artist on a phone to a grant writer.
+        '2xs': ['12px', '16px'],
+        xs: ['13px', '18px'],
+        sm: ['14px', '21px'],
+        base: ['15px', '24px'],
+        lg: ['17px', '26px'],
+        xl: ['20px', '28px'],
+        '2xl': ['24px', '32px'],
+        '3xl': ['30px', '37px'],
+        '4xl': ['36px', '42px'],
+      },
       colors: {
+        tone: {
+          warning: 'rgb(var(--tone-warning) / <alpha-value>)',
+          info: 'rgb(var(--tone-info) / <alpha-value>)',
+          success: 'rgb(var(--tone-success) / <alpha-value>)',
+          danger: 'rgb(var(--tone-danger) / <alpha-value>)',
+          accent: 'rgb(var(--tone-accent) / <alpha-value>)',
+          neutral: 'rgb(var(--tone-neutral) / <alpha-value>)',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        canvas: 'hsl(var(--canvas))',
+        subtle: 'hsl(var(--subtle))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -37,6 +60,7 @@ const tailwindConfig: Config = {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
+        faint: 'hsl(var(--faint))',
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
@@ -49,35 +73,15 @@ const tailwindConfig: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          // Alias so `bg-sidebar-background` resolves like `bg-sidebar` — see
-          // ZITE_TAILWIND_THEME in packages/zite/src/apps.ts for the rationale.
-          background: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
-        },
-        chart: {
-          1: 'hsl(var(--chart-1))',
-          2: 'hsl(var(--chart-2))',
-          3: 'hsl(var(--chart-3))',
-          4: 'hsl(var(--chart-4))',
-          5: 'hsl(var(--chart-5))',
-        },
       },
       borderRadius: {
-        '3xl': 'calc(var(--radius) + 16px)',
-        '2xl': 'calc(var(--radius) + 8px)',
-        xl: 'calc(var(--radius) + 4px)',
+        '3xl': 'var(--radius)',
+        '2xl': 'var(--radius)',
+        xl: 'var(--radius)',
         lg: 'var(--radius)',
-        DEFAULT: 'calc(var(--radius) - 2px)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        DEFAULT: 'max(0px, calc(var(--radius) - 2px))',
+        md: 'max(0px, calc(var(--radius) - 2px))',
+        sm: 'max(0px, calc(var(--radius) - 2px))',
       },
       boxShadow: {
         '2xs': 'var(--shadow-2xs)',
@@ -90,26 +94,23 @@ const tailwindConfig: Config = {
         '2xl': 'var(--shadow-2xl)',
       },
       keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-        },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
+        'fade-up': { from: { opacity: '0', transform: 'translateY(6px)' }, to: { opacity: '1', transform: 'none' } },
+        'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+        shimmer: { '0%': { backgroundPosition: '200% 0' }, '100%': { backgroundPosition: '-200% 0' } },
+        pop: { '0%': { transform: 'scale(0.6)', opacity: '0' }, '60%': { transform: 'scale(1.08)', opacity: '1' }, '100%': { transform: 'scale(1)' } },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-up': 'fade-up 240ms cubic-bezier(0.16, 1, 0.3, 1) both',
+        'fade-in': 'fade-in 180ms ease-out both',
+        shimmer: 'shimmer 1.6s ease-in-out infinite',
+        pop: 'pop 420ms cubic-bezier(0.16, 1, 0.3, 1) both',
+      },
+      maxWidth: {
+        page: '72rem',
       },
     },
   },

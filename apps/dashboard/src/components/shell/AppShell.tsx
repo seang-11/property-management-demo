@@ -160,7 +160,7 @@ export function AppShell() {
                 <Sidebar onNavigate={() => setMobileNav(false)} />
               </SheetContent>
             </Sheet>
-            <img src="/mark.png" alt="" className="h-7 w-7 shrink-0" />
+            <img src="/mark.svg" alt="" className="h-7 w-7 shrink-0" />
             <span className="truncate font-serif text-[15px] font-semibold">{ws.settings.organizationName}</span>
             <IconButton className="ml-auto" onClick={() => setPaletteOpen(true)} aria-label="Search">
               <Search />

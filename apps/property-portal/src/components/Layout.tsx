@@ -94,10 +94,10 @@ export function Layout({ children }: { children: ReactNode }) {
 function Wordmark() {
   const { data } = usePortal();
   const s = data?.settings;
-  if (!s) return <img src="/mark.png" alt="" className="h-10 w-10" aria-hidden />;
+  if (!s) return <img src="/mark.svg" alt="" className="h-10 w-10" aria-hidden />;
   return (
     <span className="flex min-w-0 items-center gap-2.5">
-      <img src="/mark.png" alt="" className="h-10 w-10 shrink-0" aria-hidden />
+      <img src="/mark.svg" alt="" className="h-10 w-10 shrink-0" aria-hidden />
       <span className="hidden min-w-0 leading-tight sm:block"><span className="block truncate font-serif text-[17px] font-semibold tracking-tight">{s.organizationName.replace(/\s*Property Management$/i, '')}</span>{/Property Management$/i.test(s.organizationName) && <span className="block text-[10px] font-medium uppercase tracking-[0.22em] text-muted-foreground">Property Management</span>}</span>
     </span>
   );

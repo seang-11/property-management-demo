@@ -105,7 +105,7 @@ export function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button type="button" className="flex min-w-0 flex-1 items-center gap-2 rounded-md px-1.5 py-1 hover:bg-sidebar-accent/70">
-              <img src="/mark.png" alt="" className="h-7 w-7 shrink-0" />
+              <img src="/mark.svg" alt="" className="h-7 w-7 shrink-0" />
               <span className="truncate font-serif text-[15px] font-semibold tracking-tight">{ws.settings.organizationName}</span>
               <ChevronRight className="h-3 w-3 shrink-0 rotate-90 text-muted-foreground" />
             </button>
